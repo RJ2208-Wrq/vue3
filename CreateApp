@@ -1,12 +1,13 @@
-Set up the Vue application: Initialize your Vue 3 application using the createApp function.
-
-Manage state: Use a reactive state to keep track of the fireworks and their explosion status.
-
-Add sound effects: Use HTML5's <audio> element or JavaScript's Audio object to play sounds.
-
-Create a callback: Define a callback function that will be triggered when a firework explodes.
-
-Integrate with your firework library: If you're using a library or custom code to handle the fireworks, integrate the callback into the explosion event.
+/**
+ * Fireworks Application
+ * 
+ * Implementation steps:
+ * 1. Set up the Vue application using createApp
+ * 2. Manage state with reactive properties for fireworks
+ * 3. Add sound effects using Audio API
+ * 4. Create explosion callback
+ * 5. Integrate with firework library
+ */
 import { createApp } from 'vue';
 
 const app = createApp({
