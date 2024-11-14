@@ -1,0 +1,36 @@
+import { createApp } from 'vue';
+
+const app = createApp({
+  data() {
+    return {
+      fireworks: [], // Array to hold firework objects
+      sounds: {
+        explosion: new Audio('path/to/explosion.mp3'), // Sound effect for explosion
+      },
+    };
+  },
+  methods: {
+    addFirework(firework) {
+      this.fireworks.push(firework);
+    },
+    playExplosionSound(firework) {
+      this.sounds.explosion.play();
+    },
+    handleFireworkExplosion(firework) {
+      // This method will be called when a firework explodes
+      this.playExplosionSound(firework);
+      // You can add more logic here if needed
+    },
+  },
+  mounted() {
+    // Example of adding a firework and simulating an explosion
+    const newFirework = { id: 1, exploded: false };
+    this.addFirework(newFirework);
+    setTimeout(() => {
+      newFirework.exploded = true;
+      this.handleFireworkExplosion(newFirework);
+    }, 2000); // Simulate explosion after 2 seconds
+  },
+});
+
+app.mount('#app');
